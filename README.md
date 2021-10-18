@@ -88,6 +88,7 @@ docker build -t tpatrascuboom/testapp:v0.0.1 .
 ```
 yq e -i '.spec.template.spec.containers[0].image = "tpatrascuboom/testapp:v0.0.1"' k8s-app-deploy.yaml
 # kubectl -n default apply -f k8s-app-deploy.yaml
+# kubectl -n default apply -f k8s-app-svc.yaml
 ```
 
 ### Get service endpoint
