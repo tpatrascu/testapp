@@ -70,6 +70,7 @@ flask run
 Run tests locally
 
 ```
+. venv/bin/activate
 pytest -v
 ```
 
