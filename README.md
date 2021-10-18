@@ -58,11 +58,11 @@ flask run
 ### Create the EKS cluster
 
 ```
-# brew install eksctl
+# brew install eksctl yq
 # eksctl create cluster --name testcluster --region eu-west-1 --fargate
 ```
 
-### Create RDS
+### Create RDS postgres
 
 
 ### Build docker image
@@ -82,12 +82,11 @@ docker build -t tpatrascuboom/testapp:v0.0.1 .
 ```
 
 
-
 ### Deploy app on cluster
 
 ```
-yq e -i ".spec.template.spec.containers[0].image = tpatrascuboom/testapp:v0.0.1 k8s-app-manifests.yaml
-# kubectl -n default apply -f k8s-app-manifests.yaml
+yq e -i '.spec.template.spec.containers[0].image = "tpatrascuboom/testapp:v0.0.1"' k8s-app-deploy.yaml
+# kubectl -n default apply -f k8s-app-deploy.yaml
 ```
 
 ### Get service endpoint
