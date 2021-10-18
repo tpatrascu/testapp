@@ -1,0 +1,8 @@
+Dockerfile
+.git
+.gitignore
+.vscode
+**/__pycache__
+venv
+**/.pytest_cache
+deploy
